@@ -1,6 +1,6 @@
 # **What are microservices?**
 
-- Microservices are a way of building applications as many **small, independent services instead of one big application.**
+- Microservices are a way of building large applications as many **small, independent services instead of one big application.**
 
 - Each service: **Has its own code, Runs in its own container, Can be deployed and scaled independently and talks to others over APIs (HTTP/gRPC)** (e.g. cart service, payment service, user service)
 
