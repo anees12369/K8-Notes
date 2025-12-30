@@ -27,6 +27,12 @@
 
 **Key Components of the Master Node** 
 
-- **kube-api-server** - The entry point to Kubernetes = communication hub - All commands go through this (kubectl, CI/CD, etc.) - e.g. 'depoly this app'
+- **kube-api-server** - The entry point to Kubernetes = communication hub - All commands go through this (kubectl, CI/CD, etc.) - e.g. 'deploy this app'
 
+- **etcd** - Kubernetes’ memory - Stores: **Cluster state, Configuration, What should be running and where** - If something crashes, Kubernetes checks etcd to recover.
 
+- **kube-controller-manager** - The supervisor - Makes sure **the desired state matches the actual state** (e.g. You want 3 pods, One crashes, Controller creates a new one)
+
+- **kube-scheduler** - Decides which worker node a new pod should run on - Considers: **Available CPU + memory and other rules (affinity, taints, etc.)**
+
+- **cloud-controller-manager (cloud only)** - Connects Kubernetes to the cloud provider - **Manages: Load balancers, Storage volumes, Networking resources**
