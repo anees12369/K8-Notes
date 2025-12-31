@@ -277,7 +277,10 @@ Describe everything:
 ```bash
 kubectl describe all
 ```
-
+Cluster name:
+```bash
+kubectl config current-context
+```
 ---
 
 ## Quick Test Commands
@@ -326,3 +329,4 @@ kubectl get pod nginx -o yaml
 ## Key Takeaway
 
 kubectl is your primary interface to Kubernetes. These commands cover the majority of daily Kubernetes operations.
+

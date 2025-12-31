@@ -4,7 +4,6 @@
 
 **How to setup a local cluster using kind:**
 ---
-
 - Simple way: `kind create cluster` which creates a default cluster for you
 
 - Or you can use a YAML config file to customize the cluster 
