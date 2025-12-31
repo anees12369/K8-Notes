@@ -19,4 +19,7 @@ nodes:
 - role: worker
 - role: worker
 ```
+- `kind create cluster --config kind-config.yaml`
+
 - This creates: 1 control-plane node + 2 worker nodes
+
