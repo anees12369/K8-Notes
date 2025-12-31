@@ -1,0 +1,5 @@
+apiVersion: app/v1
+metadata: 
+  name: my-first-deployment
+  labels:
+    app: nginx
