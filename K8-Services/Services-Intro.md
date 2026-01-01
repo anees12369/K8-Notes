@@ -14,7 +14,7 @@
 
 **How do services identify pods?**
 ---
-- Service use labels to identify pods e.g. `app: nginx`
+- Service use labels to identify pods e.g. `app: nginx` `app: frontend`
 
 **Different types of services:**
 ---
