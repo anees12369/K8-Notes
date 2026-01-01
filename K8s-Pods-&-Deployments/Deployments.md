@@ -39,15 +39,18 @@ metadata:
   name: my-first-deployment
   labels:
     app: nginx
+
 spec:
   replicas: 3              # Number of pod copies
   selector:
     matchLabels:
       app: nginx           # Connects deployment to the correct pods
+  
   template:
     metadata:
       labels:
         app: nginx         # Labels for the pods themselves
+    
     spec:
       containers:
       - name: nginx
@@ -66,4 +69,8 @@ spec:
  * `spec.containers:` Container definitions, just like in a standalone pod YAML.
 
 - Pods are named after the Deployment, with unique identifiers, e.g., `my-first-deployment-7d8f5c6f9b-abcde`
+
+**You can also create a deployment imperatively:**
+---
+- `kubectl create deployment <name> --image=nginx --replicas=3`
 
