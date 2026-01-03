@@ -12,6 +12,8 @@
 
 - It's the default service type, just create your service and Kubernetes takes care of the rest.
 
+![alt text](../Screenshots/image-4.png)
+
 **NodePort**
 ---
 - A way to make your service accessible from **outside the Kubernetes cluster**
