@@ -23,3 +23,53 @@
 - Pods always start with the correct settings
 
 - PVs/PVCs store data, ConfigMaps store settings.
+
+**Config Map Demo**
+---
+**Creating a ConfigMap:** 
+- `kubectl create cofigmap <name> --from-literal=ENV_VAR_1= --from-literal=ENV_VAR_2=`
+
+- `-from-literal=ENV_VAR_1=` a way to parse an env var 
+
+**Creating a pod that uses the ConfigMap**
+
+```yaml
+# cmap-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-demo
+spec:
+  containers:
+  - name: demo-container
+    image: busybox
+    command: ["/bin/sh", "-c", "env && sleep 3600"]
+
+    # Setting ENV VARs from the ConfigMap
+    env:
+    - name: APP_COLOUR
+      valueFrom:
+        configMapKeyRef:
+          name: my-cmap
+          key: APP_COLOUR
+    - name: APP_MODE
+      valueFrom:
+        configMapKeyRef:
+          name: my-cmap
+          key: APP_MODE
+
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+
+  volumes:
+  - name: config-volume
+    configMap:
+      name: my-cmap
+```
+- **Volume mounts** expose ConfigMap data **as files** inside the container.
+
+- **Env vars** = someone telling you the settings once
+
+- **Volume mount** = a settings folder you can open anytime
