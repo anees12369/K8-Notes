@@ -330,3 +330,4 @@ kubectl get pod nginx -o yaml
 
 kubectl is your primary interface to Kubernetes. These commands cover the majority of daily Kubernetes operations.
 
+- `kubectl exec` lets you run commands inside a running Pod
